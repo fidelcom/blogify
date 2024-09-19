@@ -14,6 +14,9 @@ from dotenv import load_dotenv
 # Optional: add contact me email functionality (Day 60)
 import smtplib
 import os
+# import secrets
+# new_secret_key = secrets.token_hex(24)  # Generates a 48-character hexadecimal string
+# print(new_secret_key)
 
 load_dotenv()  # Load environment variables from .env
 '''
@@ -34,6 +37,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 ckeditor = CKEditor(app)
 Bootstrap5(app)
+
+print(app.secret_key)
 
 # Configure Flask-Login
 login_manager = LoginManager()
